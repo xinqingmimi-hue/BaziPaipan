@@ -2,7 +2,7 @@
 name = "BaziPaipan"
 version = "1.0.0"
 description = "八字排盘工具"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 
 [tool.flet]
 product = "八字排盘"
