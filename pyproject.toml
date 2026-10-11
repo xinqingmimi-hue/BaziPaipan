@@ -1,0 +1,13 @@
+[project]
+name = "BaziPaipan"
+version = "1.0.0"
+description = "八字排盘工具"
+requires-python = ">=3.12"
+
+[tool.flet]
+product = "八字排盘"
+org = "com.xinqingmimi"
+bundle_id = "com.xinqingmimi.BaziPaipan"
+
+[tool.flet.android]
+permissions = ["internet"]
