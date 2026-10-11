@@ -296,7 +296,7 @@ def main(page: ft.Page):
     page.theme = ft.Theme(font_family="Microsoft YaHei")
     page.title = "八字排盘（2026-2032年，北京时间）"
     page.theme_mode = ft.ThemeMode.LIGHT
-    # 适配 Flet 1.0.3：窗口属性
+    # 适配 Flet 1.0.4：窗口属性
     page.window.width = 550
     page.window.height = 850
     page.window.resizable = True
@@ -313,7 +313,7 @@ def main(page: ft.Page):
     minute_in = ft.TextField(label="分", value=str(now.minute), width=70, text_align="center")
     year_in = ft.TextField(label="年", value=str(now.year), width=70, text_align="center")
 
-    # 适配 Flet 1.0.3：颜色大写
+    # 适配 Flet 1.0.4：颜色大写
     msg_text = ft.Text("", size=14, color=ft.Colors.RED)
     bazi_text = ft.Text("", size=18, weight="bold", color=ft.Colors.BLUE)
     lunar_info = ft.Text("", size=14)
@@ -378,7 +378,7 @@ def main(page: ft.Page):
         tianxian_column.controls.clear()
         if tianxian_list:
             for item in tianxian_list:
-                # 适配 Flet 1.0.3：颜色大写
+                # 适配 Flet 1.0.4：颜色大写
                 tianxian_column.controls.append(
                     ft.Text(f"{item['shizhu']} ({item['start']} - {item['end']})", size=14, color=ft.Colors.GREEN)
                 )
@@ -441,17 +441,17 @@ def main(page: ft.Page):
         alignment=ft.MainAxisAlignment.CENTER, spacing=10
     )
 
-    # 适配 Flet 1.0.3：图标大写 I
+    # 适配 Flet 1.0.4：图标大写 I，按钮改为 Button
     nav_row = ft.Row([
         ft.IconButton(icon=ft.Icons.ARROW_LEFT, tooltip="上一日", on_click=prev_day),
         ft.IconButton(icon=ft.Icons.ARROW_RIGHT, tooltip="下一日", on_click=next_day),
         ft.IconButton(icon=ft.Icons.ARROW_BACK, tooltip="上一个时辰", on_click=prev_shi),
         ft.IconButton(icon=ft.Icons.ARROW_FORWARD, tooltip="下一个时辰", on_click=next_shi),
-        ft.ElevatedButton("当前时间", on_click=set_now, icon=ft.Icons.UPDATE),
+        ft.Button("当前时间", on_click=set_now, icon=ft.Icons.UPDATE),
     ], alignment=ft.MainAxisAlignment.CENTER, spacing=10)
 
-    # 适配 Flet 1.0.3：图标大写 I，颜色大写 C
-    calc_btn = ft.ElevatedButton(
+    # 适配 Flet 1.0.4：图标大写 I，颜色大写 C，按钮改为 Button
+    calc_btn = ft.Button(
         "排盘", on_click=calculate, icon=ft.Icons.CHECK,
         style=ft.ButtonStyle(bgcolor=ft.Colors.PURPLE, color=ft.Colors.WHITE)
     )
@@ -483,6 +483,6 @@ def main(page: ft.Page):
 
     calculate()
 
-# 适配 Flet 1.0.3：使用 ft.run 启动
+# 适配 Flet 1.0.4：使用 ft.run 启动
 if __name__ == "__main__":
     ft.run(main)
