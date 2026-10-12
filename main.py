@@ -64,7 +64,6 @@ def get_bazi(dt):
     lunar = solar.getLunar()
     eight = lunar.getEightChar()
     
-    # 动态获取年柱，lunar_python 内部已处理立春分界
     year_ganzhi = eight.getYear()
     
     return {
@@ -86,7 +85,10 @@ def get_current_yuejiang(dt):
     if prev_jieqi:
         term_name = prev_jieqi.getName()
         yj = TERM_TO_YUEJIANG.get(term_name, "子")
-        return yj, prev_jieqi.getSolar().toYmdHms(), None
+        s = prev_jieqi.getSolar()
+        # 关键修复：把 Solar 对象转成 Python 的 datetime
+        start_dt = datetime(s.getYear(), s.getMonth(), s.getDay(), s.getHour(), s.getMinute(), s.getSecond())
+        return yj, start_dt, term_name
     return "子", None, None
 
 # ========== 神煞函数 ==========
