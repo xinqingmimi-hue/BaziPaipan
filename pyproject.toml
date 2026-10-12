@@ -5,9 +5,9 @@ description = "八字排盘工具"
 requires-python = ">=3.11"
 
 [tool.flet]
-product = "天显婷婷2100"
+product = "查选时辰2100"
 org = "com.xinqingmimi"
-bundle_id = "com.xinqingmimi.BaziPaipan4"
+bundle_id = "com.xinqingmimi.BaziPaipan5"
 
 [tool.flet.android]
 permissions = ["internet"]
