@@ -5,7 +5,7 @@ description = "八字排盘工具"
 requires-python = ">=3.11"
 
 [tool.flet]
-product = "查选时辰"
+product = "天显婷婷"
 org = "com.xinqingmimi"
 bundle_id = "com.xinqingmimi.BaziPaipan3"
 
