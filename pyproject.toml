@@ -7,7 +7,7 @@ requires-python = ">=3.11"
 [tool.flet]
 product = "查选时辰"
 org = "com.xinqingmimi"
-bundle_id = "com.xinqingmimi.BaziPaipan2"
+bundle_id = "com.xinqingmimi.BaziPaipan3"
 
 [tool.flet.android]
 permissions = ["internet"]
